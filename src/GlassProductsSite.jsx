@@ -55,7 +55,7 @@ export default function GlassProductsSite() {
           <div className="flex items-center gap-3">
             <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-sky-500 to-indigo-600 flex items-center justify-center text-white font-bold">G</div>
             <div>
-              <div className="font-semibold">Granite & Glass Co.</div>
+              <div className="font-semibold">Luxe Glass Co.</div>
               <div className="text-xs text-gray-500">Architectural glass for luxury residences</div>
             </div>
           </div>
