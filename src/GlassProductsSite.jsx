@@ -106,7 +106,7 @@ export default function GlassProductsSite() {
         <section id="products" className="max-w-6xl mx-auto px-6 py-12">
           <div className="flex items-center justify-between">
             <h2 className="text-2xl font-bold">Selected Projects & Signature Pieces</h2>
-            <div className="text-sm text-gray-600">Hand-picked for developers & architects</div>
+            <div className="text-sm text-gray-600">Hand-picked for architects & developers</div>
           </div>
 
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -165,11 +165,11 @@ export default function GlassProductsSite() {
               <dl className="mt-4 text-sm text-gray-600 space-y-2">
                 <div>
                   <dt className="font-medium">Lead contact</dt>
-                  <dd>Project Manager — <span className="font-semibold">(555) 123-4567</span></dd>
+                  <dd>Project Manager — <span className="font-semibold">(303) 884-2918</span></dd>
                 </div>
                 <div>
                   <dt className="font-medium">Email</dt>
-                  <dd>hello@example.com</dd>
+                  <dd>hello@luxeglass.pro</dd>
                 </div>
                 <div>
                   <dt className="font-medium">Office</dt>
@@ -209,8 +209,8 @@ export default function GlassProductsSite() {
               <p className="mt-2 text-sm text-gray-600">We respond to project inquiries during business hours. Please include an approximate timeline and square footage for accurate quoting.</p>
 
               <div className="mt-4 text-sm space-y-2">
-                <div><strong>Phone:</strong> (555) 123-4567</div>
-                <div><strong>Email:</strong> hello@example.com</div>
+                <div><strong>Phone:</strong> (303) 884-2918</div>
+                <div><strong>Email:</strong> hello@luxeglass.pro</div>
                 <div><strong>Address:</strong> Denver, CO (US-based project coordination)</div>
               </div>
 
@@ -226,14 +226,14 @@ export default function GlassProductsSite() {
         <footer className="bg-gray-900 text-gray-200 mt-12">
           <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-start justify-between gap-6">
             <div>
-              <div className="font-semibold text-white">Granite & Glass Co.</div>
+              <div className="font-semibold text-white">Luxe Glass Colorado</div>
               <div className="text-sm mt-2">High-end architectural glass — Developed for the North American market.</div>
             </div>
 
             <div className="text-sm">
-              <div>Phone: (555) 123-4567</div>
-              <div>Email: hello@example.com</div>
-              <div className="mt-2 text-xs text-gray-400">© {new Date().getFullYear()} Granite & Glass Co. All rights reserved.</div>
+              <div>Phone: (303) 884-2918</div>
+              <div>Email: hello@luxeglass.pro</div>
+              <div className="mt-2 text-xs text-gray-400">© {new Date().getFullYear()} Luxe Glass Colorado. All rights reserved.</div>
             </div>
           </div>
         </footer>
