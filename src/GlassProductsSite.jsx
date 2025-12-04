@@ -56,7 +56,7 @@ export default function GlassProductsSite() {
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img 
-              src="/images/logos/luxe-glass-logo.png"
+              src="/images/logos/luxe-glass-logo.webp"
               alt="Luxe Glass Logo"
               className="h-10 w-auto"
             />
@@ -103,7 +103,7 @@ export default function GlassProductsSite() {
             <div className="relative">
               <div className="rounded-xl overflow-hidden shadow-lg">
                 <img 
-                  src="/images/Exquisite-Berg.webp" 
+                  src="/images/tables/Top8/Exquisite-Berg.webp" 
                   alt="Featured glass" 
                   className="w-full h-96 object-cover" 
                 />
