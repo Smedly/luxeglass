@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Gallery from './Gallery'
+
 
 // GlassProductsSite.jsx
 // Single-file React component built with Tailwind CSS utility classes.
@@ -109,26 +111,10 @@ export default function GlassProductsSite() {
             <div className="text-sm text-gray-600">Hand-picked for architects & developers</div>
           </div>
 
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {products.map((p) => (
-              <article key={p.id} className="bg-white rounded-xl shadow-sm overflow-hidden">
-                <div className="h-56 w-full overflow-hidden">
-                  <img src={p.img} alt={p.name} className="w-full h-full object-cover" />
-                </div>
-                <div className="p-4">
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-semibold">{p.name}</h3>
-                    <span className="text-xs text-gray-500">{p.type}</span>
-                  </div>
-                  <p className="mt-2 text-sm text-gray-600">{p.short}</p>
-                  <div className="mt-4 flex items-center justify-between">
-                    <button onClick={() => openModal(p)} className="text-sm px-3 py-2 border rounded-md">View details</button>
-                    <div className="text-sm text-gray-500">{p.priceCue}</div>
-                  </div>
-                </div>
-              </article>
-            ))}
+          <div className="mt-6">
+            <Gallery />
           </div>
+
         </section>
 
         {/* About / Why us */}
