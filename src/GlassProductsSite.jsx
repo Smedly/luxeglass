@@ -82,7 +82,7 @@ export default function GlassProductsSite() {
         <section className="relative overflow-hidden">
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-6 py-16">
             <div>
-              <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">Bespoke Architectural Glass — Built for Modern Residential Developments</h1>
+              <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">Bespoke Architectural Glass — Built for Modern Commercial & Residential Developments</h1>
               <p className="mt-4 text-lg text-gray-600">We partner with developers and architects to deliver signature glass pieces — from sculptural dining tables to entirely frameless shower systems and artisan sinks. American project management, precision craftsmanship, and strict QC.</p>
 
               <div className="mt-6 flex gap-3">
