@@ -16,7 +16,7 @@ export default function GlassProductsSite() {
       name: 'Signature Glass Dining Table — Aurora',
       type: 'Table',
       short: 'Seamless 1" tempered glass top with under-mounted LED and brushed stainless base.',
-      img: 'https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=0c3d2a3b3d47d0b64582f9f6c5c7b2a9',
+      img: 'https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=0c3d2a3b3d47d0b64582f9f6c5c7b2a9%27,',
       specs: ['Tempered ultra-clear glass', 'Custom sizes up to 144"', 'Integrated cable management'],
       priceCue: 'Contact for pricing',
     },
@@ -55,7 +55,11 @@ export default function GlassProductsSite() {
       <header className="bg-white shadow-sm sticky top-0 z-40">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-sky-500 to-indigo-600 flex items-center justify-center text-white font-bold">G</div>
+            <img 
+              src="/images/logos/luxe-glass-logo.png"
+              alt="Luxe Glass Logo"
+              className="h-10 w-auto"
+            />
             <div>
               <div className="font-semibold">Luxe Glass Colorado</div>
               <div className="text-xs text-gray-500">Architectural glass for luxury residences</div>
@@ -98,7 +102,11 @@ export default function GlassProductsSite() {
 
             <div className="relative">
               <div className="rounded-xl overflow-hidden shadow-lg">
-                <img src={products[0].img} alt="Featured glass" className="w-full h-96 object-cover" />
+                <img 
+                  src="/images/Exquisite-Berg.webp" 
+                  alt="Featured glass" 
+                  className="w-full h-96 object-cover" 
+                />
               </div>
             </div>
           </div>
@@ -112,7 +120,7 @@ export default function GlassProductsSite() {
           </div>
 
           <div className="mt-6">
-            <Gallery />
+            <Gallery initialCount={3} initialCategory="All" />
           </div>
 
         </section>
