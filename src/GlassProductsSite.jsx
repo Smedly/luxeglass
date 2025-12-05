@@ -116,7 +116,7 @@ export default function GlassProductsSite() {
         <section id="products" className="max-w-6xl mx-auto px-6 py-12">
           <div className="flex items-center justify-between">
             <h2 className="text-2xl font-bold">Selected Projects & Signature Pieces</h2>
-            <div className="text-sm text-gray-600">Hand-picked for architects & developers</div>
+            <div className="text-sm text-gray-600">Fully customizable marble, glass, or hand-cast designer resin. Embedded smartphone controlled LEDs/electronics. </div>
           </div>
 
           <div className="mt-6">
