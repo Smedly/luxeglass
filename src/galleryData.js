@@ -7,8 +7,8 @@ export const tableGallery = [
     category: "Tables",
     title: "Argent Shard Table",
     description: "Premium tempered glass with fractured metallic patterning for a sculptural, modern presence.",
-    thumb: "/images/tables/Top8/argent-shard-thumb.webp",
-    large: "/images/tables/Top8/argent-shard.webp",
+    thumb: "images/tables/Top8/argent-shard-thumb.webp",
+    large: "images/tables/Top8/argent-shard.webp",
     alt: "Argent Shard glass table with metallic crystalline texture"
   },
   {
@@ -16,8 +16,8 @@ export const tableGallery = [
     category: "Tables",
     title: "Aurora Moon Table",
     description: "Subtle luminous gradients evoke lunar reflections across smooth tempered glass.",
-    thumb: "/images/tables/Top8/aurora-moon-thumb.webp",
-    large: "/images/tables/Top8/aurora-moon.webp",
+    thumb: "images/tables/Top8/aurora-moon-thumb.webp",
+    large: "images/tables/Top8/aurora-moon.webp",
     alt: "Aurora Moon glass table with soft glowing gradient"
   },
   {
