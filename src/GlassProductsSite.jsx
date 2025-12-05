@@ -70,7 +70,7 @@ export default function GlassProductsSite() {
             <a href="#products" className="hover:text-indigo-600">Products</a>
             <a href="#about" className="hover:text-indigo-600">About</a>
             <a href="#contact" className="hover:text-indigo-600">Contact</a>
-            <a href="mailto:hello@example.com" className="px-3 py-2 bg-indigo-600 text-white rounded-md text-sm">Request Quote</a>
+            <a href="mailto:quote@luxeglass.pro" className="px-3 py-2 bg-indigo-600 text-white rounded-md text-sm">Request Quote</a>
           </nav>
 
           <button className="md:hidden px-3 py-2 border rounded-md text-sm">Menu</button>
@@ -163,7 +163,7 @@ export default function GlassProductsSite() {
                 </div>
                 <div>
                   <dt className="font-medium">Email</dt>
-                  <dd>hello@luxeglass.pro</dd>
+                  <dd>quote@luxeglass.pro</dd>
                 </div>
                 <div>
                   <dt className="font-medium">Office</dt>
@@ -204,7 +204,7 @@ export default function GlassProductsSite() {
 
               <div className="mt-4 text-sm space-y-2">
                 <div><strong>Phone:</strong> (303) 884-2918</div>
-                <div><strong>Email:</strong> hello@luxeglass.pro</div>
+                <div><strong>Email:</strong> quote@luxeglass.pro</div>
                 <div><strong>Address:</strong> Denver, CO (US-based project coordination)</div>
               </div>
 
@@ -226,7 +226,7 @@ export default function GlassProductsSite() {
 
             <div className="text-sm">
               <div>Phone: (303) 884-2918</div>
-              <div>Email: hello@luxeglass.pro</div>
+              <div>Email: quote@luxeglass.pro</div>
               <div className="mt-2 text-xs text-gray-400">© {new Date().getFullYear()} Luxe Glass Colorado. All rights reserved.</div>
             </div>
           </div>
@@ -261,7 +261,7 @@ export default function GlassProductsSite() {
                 </ul>
 
                 <div className="mt-6 flex gap-3">
-                  <a href="mailto:hello@example.com?subject=Quote%20Request%20-%20" className="px-4 py-2 bg-indigo-600 text-white rounded-md">Request Quote</a>
+                  <a href="mailto:quote@luxeglass.pro?subject=Quote%20Request%20-%20" className="px-4 py-2 bg-indigo-600 text-white rounded-md">Request Quote</a>
                   <button onClick={() => { navigator.clipboard && navigator.clipboard.writeText(selected.name); alert('Product name copied to clipboard'); }} className="px-4 py-2 border rounded-md">Copy product name</button>
                 </div>
 
