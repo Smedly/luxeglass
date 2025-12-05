@@ -278,7 +278,7 @@ export default function GlassProductsSite() {
 /*
   Instructions:
   - This file expects Tailwind CSS to be available in the project.
-  - Replace placeholder email/phone/address with your real contact info.
+  - Replace placeholder email/phone/address with your real contact info. Yowzer!
   - Hook the contact form to a server endpoint or CRM to collect leads.
   - Swap images with project photos to avoid stock-photo confusion.
   - Add analytics or a simple Google Business Profile link if you want local SEO.
