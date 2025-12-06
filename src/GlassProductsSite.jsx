@@ -148,39 +148,92 @@ export default function GlassProductsSite() {
         </section>
 
         {/* Contact */}
-        <section id="contact" className="max-w-6xl mx-auto px-6 py-12 scroll-mt-28">
-          <h2 className="text-2xl font-bold">Contact & Request Quote</h2>
-          <p className="mt-2 text-sm text-gray-600">Prefer direct contact? Email or phone listed below — or use the quick form to request a project quote.</p>
+        <section id="contact" class="bg-gray-100 py-12">
+          <div class="max-w-2xl mx-auto p-6 bg-white shadow-xl rounded-2xl">
+            <h2 class="text-3xl font-bold mb-6 text-center">Contact & Request Quote</h2>
 
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <form className="bg-white p-6 rounded-lg shadow-sm">
-              <label className="block text-sm font-medium">Your name</label>
-              <input className="mt-1 block w-full border px-3 py-2 rounded-md" placeholder="Name" />
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-4" enctype="multipart/form-data">
+              <input type="hidden" name="access_key" value="831c26d9-9fa8-4b2d-b6e4-d4248267e967" />
 
-              <label className="block text-sm font-medium mt-4">Company</label>
-              <input className="mt-1 block w-full border px-3 py-2 rounded-md" placeholder="Company / Developer" />
-
-              <label className="block text-sm font-medium mt-4">Project details</label>
-              <textarea className="mt-1 block w-full border px-3 py-2 rounded-md" rows="4" placeholder="Short description, timeline, measurements, location" />
-
-              <div className="mt-4 flex gap-3">
-                <button type="button" onClick={() => window.location = 'mailto:quote@luxeglass.pro?subject=Project%20Inquiry'} className="px-4 py-2 bg-indigo-600 text-white rounded-md">Email us</button>
-                <button type="button" onClick={() => alert('Form submitted (demo) — replace with real handler)')} className="px-4 py-2 border rounded-md">Send (demo)</button>
+              <div>
+                <label class="block font-semibold mb-1">Name</label>
+                <input type="text" name="name" required class="w-full p-2 border rounded-lg" placeholder="Full Name" />
               </div>
+
+              <div>
+                <label class="block font-semibold mb-1">Email</label>
+                <input type="email" name="email" required class="w-full p-2 border rounded-lg" placeholder="Email Address" />
+              </div>
+
+              <div>
+                <label class="block font-semibold mb-1">Phone</label>
+                <input type="tel" name="phone" class="w-full p-2 border rounded-lg" placeholder="Phone Number" />
+              </div>
+
+              <div>
+                <label class="block font-semibold mb-1">Project Type</label>
+                <input type="text" name="project_type" class="w-full p-2 border rounded-lg" placeholder="Resin Table, Sink, Shower, etc." />
+              </div>
+
+              <div>
+                <label class="block font-semibold mb-1">Project Details</label>
+                <textarea name="message" rows="6" required class="w-full p-2 border rounded-lg" placeholder="Short description, timeline, measurements, location"></textarea>
+              </div>
+
+              <div>
+                <label class="block font-semibold mb-1">Upload Files (optional)</label>
+                <input type="file" name="file" class="w-full p-2 border rounded-lg" />
+              </div>
+
+              <button type="submit" class="w-full bg-black text-white font-semibold py-3 rounded-xl hover:bg-gray-800 transition flex justify-center items-center gap-2">
+                <svg id="spinner" class="animate-spin h-5 w-5 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                </svg>
+                <span>Send Request</span>
+              </button>
+
+              <p id="form-status" class="text-center mt-4 text-lg font-semibold opacity-0 transition-opacity duration-700"></p>
             </form>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-semibold">Direct contact</h3>
-              <p className="mt-2 text-sm text-gray-600">We respond to project inquiries during business hours. Include timeline & approximate scope for accurate quoting.</p>
+            <script>
+              const form = document.getElementById('contact-form');
+              const status = document.getElementById('form-status');
+              const spinner = document.getElementById('spinner');
 
-              <div className="mt-4 text-sm space-y-2">
-                <div><strong>Phone:</strong> (303) 884-2918</div>
-                <div><strong>Email:</strong> quote@luxeglass.pro</div>
-                <div><strong>Address:</strong> Denver, CO (US‑based coordination)</div>
-              </div>
-            </div>
+              form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                spinner.classList.remove('hidden');
+                status.style.opacity = 1;
+                status.textContent = "Sending...";
+                status.className = "text-center mt-4 text-lg font-semibold text-gray-600 opacity-100 transition-opacity duration-700";
+
+                const formData = new FormData(form);
+
+                try {
+                  const response = await fetch(form.action, { method: 'POST', body: formData });
+                  const result = await response.json();
+
+                  spinner.classList.add('hidden');
+
+                  if (response.ok) {
+                    status.textContent = "Your request was successfully sent.";
+                    status.className = "text-center mt-4 text-lg font-semibold text-green-600 animate-pulse";
+                    form.reset();
+                  } else {
+                    status.textContent = "Please try again.";
+                    status.className = "text-center mt-4 text-lg font-semibold text-red-600 animate-pulse";
+                  }
+                } catch (error) {
+                  spinner.classList.add('hidden');
+                  status.textContent = "Please try again.";
+                  status.className = "text-center mt-4 text-lg font-semibold text-red-600 animate-pulse";
+                }
+              });
+            </script>
           </div>
         </section>
+
 
         {/* Footer */}
         <footer className="bg-gray-900 text-gray-200 mt-12">
