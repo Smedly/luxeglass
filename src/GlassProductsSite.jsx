@@ -84,7 +84,7 @@ export default function GlassProductsSite() {
               </ul>
 
               <div className="mt-6 text-xs text-gray-500">
-                Representative images. All pieces are inspected and packaged in the U.S. Detailed lead times and
+                All pieces are inspected and packaged in the U.S. Detailed lead times and
                 production schedules available upon request.
               </div>
             </div>
