@@ -185,6 +185,7 @@ export default function GlassProductsSite() {
 
           <form
             onSubmit={handleSubmit}
+            encType="multipart/form-data"
             className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 bg-white p-6 rounded-lg shadow-sm"
           >
             <div className="space-y-4">
