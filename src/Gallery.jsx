@@ -15,7 +15,7 @@ function Thumb({ img, onOpen }) {
       </button>
       <div className="p-3 text-sm">
         <div className="font-semibold">{img.title}</div>
-        <div className="text-xs text-gray-500">{img.project || 'Click for Details'} ➡️ {img.location || ''}</div>
+        <div className="text-xs text-gray-500">{img.project || 'Click for Details'} ⬆️ {img.location || ''}</div>
       </div>
     </article>
   )
