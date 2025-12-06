@@ -1,12 +1,13 @@
-// Updated GlassProductsSite.jsx
-// Incorporates: removal of placeholder products, updated materials, improved layout spacing,
-// corrected scroll anchors, rewritten section text.
-
-import React, { useState, useEffect } from 'react';
+// src/GlassProductsSite.jsx
+import React, { useState, useEffect, useRef } from 'react';
 import Gallery from './Gallery';
 
 export default function GlassProductsSite() {
   const [selected, setSelected] = useState(null);
+  const [statusMessage, setStatusMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const spinnerRef = useRef();
+  const statusRef = useRef();
 
   // Smooth-scroll offset helper
   useEffect(() => {
@@ -32,6 +33,34 @@ export default function GlassProductsSite() {
     setSelected(null);
   }
 
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setLoading(true);
+    setStatusMessage('');
+    const formData = new FormData(e.target);
+    formData.append('access_key', '831c26d9-9fa8-4b2d-b6e4-d4248267e967'); // Web3Forms API key
+    formData.append('subject', 'New Project Quote Request');
+    formData.append('redirect', ''); // optional redirect URL
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+      const result = await res.json();
+      if (result.success) {
+        setStatusMessage('✅ Your request was successfully sent!');
+        e.target.reset();
+      } else {
+        setStatusMessage('⚠️ Something went wrong. Please try again.');
+      }
+    } catch {
+      setStatusMessage('⚠️ Something went wrong. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
       {/* Header */}
@@ -49,7 +78,7 @@ export default function GlassProductsSite() {
             <a href="#products" className="hover:text-indigo-600">Products</a>
             <a href="#about" className="hover:text-indigo-600">About</a>
             <a href="#contact" className="hover:text-indigo-600">Contact</a>
-            <a href="mailto:quote@luxeglass.pro" className="px-3 py-2 bg-indigo-600 text-white rounded-md text-sm">Request Quote</a>
+            <a href="#contact" className="px-3 py-2 bg-indigo-600 text-white rounded-md text-sm">Request Quote</a>
           </nav>
 
           <button className="md:hidden px-3 py-2 border rounded-md text-sm">Menu</button>
@@ -148,92 +177,77 @@ export default function GlassProductsSite() {
         </section>
 
         {/* Contact */}
-        <section id="contact" class="bg-gray-100 py-12">
-          <div class="max-w-2xl mx-auto p-6 bg-white shadow-xl rounded-2xl">
-            <h2 class="text-3xl font-bold mb-6 text-center">Contact & Request Quote</h2>
+        <section id="contact" className="max-w-6xl mx-auto px-6 py-12 scroll-mt-28">
+          <h2 className="text-2xl font-bold">Contact & Request Quote</h2>
+          <p className="mt-2 text-sm text-gray-600">
+            Prefer direct contact? Email or phone listed below — or use the quick form to request a project quote.
+          </p>
 
-            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-4" enctype="multipart/form-data">
-              <input type="hidden" name="access_key" value="831c26d9-9fa8-4b2d-b6e4-d4248267e967" />
+          <form
+            onSubmit={handleSubmit}
+            className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 bg-white p-6 rounded-lg shadow-sm"
+          >
+            <div className="space-y-4">
+              <label className="block text-sm font-medium">Name</label>
+              <input name="name" required className="mt-1 block w-full border px-3 py-2 rounded-md" placeholder="Your name" />
 
-              <div>
-                <label class="block font-semibold mb-1">Name</label>
-                <input type="text" name="name" required class="w-full p-2 border rounded-lg" placeholder="Full Name" />
+              <label className="block text-sm font-medium">Email</label>
+              <input name="email" type="email" required className="mt-1 block w-full border px-3 py-2 rounded-md" placeholder="Your email" />
+
+              <label className="block text-sm font-medium">Phone</label>
+              <input name="phone" className="mt-1 block w-full border px-3 py-2 rounded-md" placeholder="Your phone" />
+
+              <label className="block text-sm font-medium">Project Type</label>
+              <input name="project_type" className="mt-1 block w-full border px-3 py-2 rounded-md" placeholder="Resin Table, Sink, etc." />
+            </div>
+
+            <div className="space-y-4">
+              <label className="block text-sm font-medium">Project Details</label>
+              <textarea name="message" required className="mt-1 block w-full border px-3 py-2 rounded-md" rows="6" placeholder="Short description, timeline, measurements, location" />
+
+              <label className="block text-sm font-medium">Attach File (optional)</label>
+              <input name="file" type="file" className="mt-1 block w-full border px-3 py-2 rounded-md" />
+
+              <div className="flex items-center gap-4 mt-4">
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-indigo-600 text-white rounded-md relative flex items-center"
+                >
+                  {loading && (
+                    <span className="loader mr-2" ref={spinnerRef}>
+                      <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                      </svg>
+                    </span>
+                  )}
+                  Send Request
+                </button>
+
+                {statusMessage && (
+                  <span
+                    ref={statusRef}
+                    className="transition-opacity duration-500 text-sm"
+                  >
+                    {statusMessage}
+                  </span>
+                )}
               </div>
+            </div>
+          </form>
 
-              <div>
-                <label class="block font-semibold mb-1">Email</label>
-                <input type="email" name="email" required class="w-full p-2 border rounded-lg" placeholder="Email Address" />
-              </div>
-
-              <div>
-                <label class="block font-semibold mb-1">Phone</label>
-                <input type="tel" name="phone" class="w-full p-2 border rounded-lg" placeholder="Phone Number" />
-              </div>
-
-              <div>
-                <label class="block font-semibold mb-1">Project Type</label>
-                <input type="text" name="project_type" class="w-full p-2 border rounded-lg" placeholder="Resin Table, Sink, Shower, etc." />
-              </div>
-
-              <div>
-                <label class="block font-semibold mb-1">Project Details</label>
-                <textarea name="message" rows="6" required class="w-full p-2 border rounded-lg" placeholder="Short description, timeline, measurements, location"></textarea>
-              </div>
-
-              <div>
-                <label class="block font-semibold mb-1">Upload Files (optional)</label>
-                <input type="file" name="file" class="w-full p-2 border rounded-lg" />
-              </div>
-
-              <button type="submit" class="w-full bg-black text-white font-semibold py-3 rounded-xl hover:bg-gray-800 transition flex justify-center items-center gap-2">
-                <svg id="spinner" class="animate-spin h-5 w-5 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
-                </svg>
-                <span>Send Request</span>
-              </button>
-
-              <p id="form-status" class="text-center mt-4 text-lg font-semibold opacity-0 transition-opacity duration-700"></p>
-            </form>
-
-            <script>
-              const form = document.getElementById('contact-form');
-              const status = document.getElementById('form-status');
-              const spinner = document.getElementById('spinner');
-
-              form.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                spinner.classList.remove('hidden');
-                status.style.opacity = 1;
-                status.textContent = "Sending...";
-                status.className = "text-center mt-4 text-lg font-semibold text-gray-600 opacity-100 transition-opacity duration-700";
-
-                const formData = new FormData(form);
-
-                try {
-                  const response = await fetch(form.action, { method: 'POST', body: formData });
-                  const result = await response.json();
-
-                  spinner.classList.add('hidden');
-
-                  if (response.ok) {
-                    status.textContent = "Your request was successfully sent.";
-                    status.className = "text-center mt-4 text-lg font-semibold text-green-600 animate-pulse";
-                    form.reset();
-                  } else {
-                    status.textContent = "Please try again.";
-                    status.className = "text-center mt-4 text-lg font-semibold text-red-600 animate-pulse";
-                  }
-                } catch (error) {
-                  spinner.classList.add('hidden');
-                  status.textContent = "Please try again.";
-                  status.className = "text-center mt-4 text-lg font-semibold text-red-600 animate-pulse";
-                }
-              });
-            </script>
+          <div className="mt-6 bg-white p-6 rounded-lg shadow-sm">
+            <h3 className="font-semibold">Direct Contact</h3>
+            <p className="mt-2 text-sm text-gray-600">
+              We respond to project inquiries during business hours. Include timeline & approximate scope for accurate quoting.
+            </p>
+            <div className="mt-4 text-sm space-y-2">
+              <div><strong>Phone:</strong> (303) 884-2918</div>
+              <div><strong>Email:</strong> quote@luxeglass.pro</div>
+              <div><strong>Address:</strong> Denver, CO (US‑based coordination)</div>
+            </div>
           </div>
         </section>
-
 
         {/* Footer */}
         <footer className="bg-gray-900 text-gray-200 mt-12">
