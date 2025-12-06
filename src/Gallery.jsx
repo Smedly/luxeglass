@@ -1,113 +1,128 @@
 // src/Gallery.jsx
-import React, { useState } from 'react';
-import { tableGallery } from './galleryData';
+import React, { useState } from 'react'
+import tableGallery from './galleryData' // uses default export from your galleryData.js
 
-export default function Gallery({ initialCount = 3, initialCategory = "All" }) {
-  const [selected, setSelected] = useState(null);
-  const [count, setCount] = useState(initialCount);
+function Thumb({ img, onOpen }) {
+  return (
+    <article className="bg-white rounded overflow-hidden shadow-sm">
+      <button onClick={() => onOpen(img)} className="w-full text-left">
+        <img
+          src={img.thumb}
+          alt={img.alt}
+          loading="lazy"
+          className="w-full h-48 object-cover"
+        />
+      </button>
+      <div className="p-3 text-sm">
+        <div className="font-semibold">{img.title}</div>
+        <div className="text-xs text-gray-500">
+          {img.project || 'Click for Details ➡️'} {img.location ? `• ${img.location}` : ''}
+        </div>
+      </div>
+    </article>
+  )
+}
 
-  const categories = ["All", ...new Set(tableGallery.map(item => item.category))];
+export default function Gallery({ initialCategory = 'All', initialCount = 9 }) {
+  const items = tableGallery
+  const categories = ['All', ...Array.from(new Set(items.map(i => i.category)))]
+  const [filter, setFilter] = useState(initialCategory)
+  const [open, setOpen] = useState(null)
+  const [count, setCount] = useState(initialCount)
 
-  const filtered = initialCategory === "All"
-    ? tableGallery
-    : tableGallery.filter(item => item.category === initialCategory);
-
-  function openModal(item) {
-    setSelected(item);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  function closeModal() {
-    setSelected(null);
-  }
+  const visible = items.filter(i => (filter === 'All' ? true : i.category === filter))
 
   return (
-    <div>
-      {/* Gallery Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
-        {filtered.slice(0, count).map(item => (
-          <div key={item.id} className="cursor-pointer" onClick={() => openModal(item)}>
-            <div className="overflow-hidden rounded-lg shadow-lg">
-              <img
-                src={item.large}
-                alt={item.alt}
-                className="w-full h-64 object-cover transform transition-transform duration-300 hover:scale-105"
-              />
-            </div>
-            <div className="mt-2 text-center text-sm text-gray-600">
-              click for details ⬆️
-            </div>
-          </div>
+    <section className="max-w-6xl mx-auto px-6 py-8">
+      {/* Category Filter */}
+      <div className="flex items-center gap-4 mb-6">
+        {categories.map(c => (
+          <button
+            key={c}
+            onClick={() => { setFilter(c); setCount(initialCount) }}
+            className={`px-3 py-1 rounded ${filter === c ? 'bg-indigo-600 text-white' : 'bg-gray-100'}`}
+          >
+            {c}
+          </button>
         ))}
       </div>
 
-      {count < filtered.length && (
+      {/* Thumbnails */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {visible.slice(0, count).map(img => (
+          <Thumb key={img.id} img={img} onOpen={setOpen} />
+        ))}
+      </div>
+
+      {/* Load more */}
+      {visible.length > count && (
         <div className="mt-6 text-center">
           <button
-            onClick={() => setCount(prev => prev + initialCount)}
-            className="px-4 py-2 border rounded-md text-sm hover:bg-gray-100"
+            onClick={() => setCount(c => c + initialCount)}
+            className="px-4 py-2 border rounded"
           >
             Load more
           </button>
         </div>
       )}
 
-      {/* Product Modal */}
-      {selected && (
-        <div className="fixed inset-0 z-50 flex items-start justify-center p-6">
-          <div className="absolute inset-0 bg-black/40" onClick={closeModal}></div>
+      {/* Lightbox / Modal */}
+      {open && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-6">
+          <div className="absolute inset-0 bg-black/60" onClick={() => setOpen(null)} />
 
-          <div className="relative max-w-4xl w-full bg-white rounded-xl shadow-xl overflow-hidden">
+          <div className="relative max-w-4xl w-full bg-white rounded shadow-lg overflow-hidden">
             <div className="md:flex">
-              <div className="md:w-1/2 h-64 md:h-auto overflow-hidden">
-                <img src={selected.img} alt={selected.name} className="w-full h-full object-cover" />
+              {/* Large Image */}
+              <div className="md:w-2/3 p-4">
+                <img
+                  src={open.large}
+                  alt={open.alt}
+                  className="w-full h-auto object-contain"
+                />
               </div>
 
-              <div className="md:w-1/2 p-6">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h3 className="text-xl font-bold">{selected.name}</h3>
-                    <div className="text-sm text-gray-500">{selected.type}</div>
-                  </div>
-                  <button onClick={closeModal} className="text-gray-400">Close</button>
+              {/* Details */}
+              <div className="md:w-1/3 p-6">
+                <h3 className="font-bold text-xl">{open.title}</h3>
+                <div className="text-sm text-gray-600 mt-2">
+                  {open.project || 'Click for Details ➡️'} {open.location ? `• ${open.location}` : ''}
                 </div>
+                <p className="mt-4 text-sm">{open.description}</p>
 
-                <p className="mt-4 text-gray-600">{selected.short}</p>
+                {/* Professional quotation text */}
+                <p className="mt-4 text-sm text-gray-700">
+                  To receive an accurate quotation:
+                  <br />
+                  For hand-crafted designer resin tables: please include dimensions, scale, materials, intended environment, functional requirements, any custom imagery, text, or embedded elements, LED or other electronics, and control requirements.
+                  <br />
+                  For sinks, tubs, and showers: please include dimensions, mounting type, drain configuration, and preferred finish/texture.
+                  <br />
+                  Project details: installation location, quantity, timeline, or any logistical considerations. Providing this information helps ensure your quotation is precise, efficient, and tailored to your exact vision.
+                </p>
 
-                <ul className="mt-4 list-disc list-inside text-sm text-gray-600">
-                  {selected.specs?.map((s, i) => (
-                    <li key={i}>{s}</li>
-                  ))}
-                </ul>
-
-                {/* Quotation Guidance */}
-                <div className="mt-6 text-sm text-gray-600 space-y-3">
-                  <p><strong>To receive an accurate quotation:</strong></p>
-
-                  <p>
-                    For <strong>hand-crafted designer resin tables</strong>, please include materials, thickness, intended environment, functional requirements, and any custom imagery, etching, or embedded elements (e.g., flowers, shells). Specify any integrated LED lighting or electronics and control requirements. Include dimensions and scale.
-                  </p>
-
-                  <p>
-                    For sinks, tubs, and showers, please include dimensions, mounting type, drain configuration, and preferred finish or texture.
-                  </p>
-
-                  <p>
-                    <strong>Project details:</strong> installation location, quantity, timeline, or any logistical considerations. Providing this information ensures your quotation is precise, efficient, and tailored to your exact vision.
-                  </p>
-                </div>
-
+                {/* Request Quote Button */}
                 <div className="mt-6 flex gap-3">
-                  <a href="mailto:quote@luxeglass.pro?subject=Quote%20Request%20-%20" className="px-4 py-2 bg-indigo-600 text-white rounded-md">Request Quote</a>
-                  <button onClick={() => { navigator.clipboard && navigator.clipboard.writeText(selected.name); alert('Product name copied to clipboard'); }} className="px-4 py-2 border rounded-md">Copy product name</button>
+                  <a
+                    href={`mailto:quote@luxeglass.pro?subject=Inquiry about ${encodeURIComponent(open.title)}`}
+                    className="px-4 py-2 bg-indigo-600 text-white rounded"
+                  >
+                    Request quote
+                  </a>
                 </div>
-
-                <div className="mt-6 text-xs text-gray-400">Note: Images shown are representative. Final finishes and hardware are selected per project.</div>
               </div>
             </div>
+
+            {/* Close Button */}
+            <button
+              onClick={() => setOpen(null)}
+              className="absolute top-3 right-3 text-gray-600"
+            >
+              Close
+            </button>
           </div>
         </div>
       )}
-    </div>
-  );
+    </section>
+  )
 }
