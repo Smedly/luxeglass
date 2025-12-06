@@ -42,10 +42,11 @@ export default function GlassProductsSite() {
     formData.append('subject', 'New Project Quote Request');
     formData.append('redirect', ''); // optional redirect URL
 
-    // Ensure only one file is appended
-  const fileInput = e.target.elements.file;
+    // Make sure the file is included correctly
+  const fileInput = e.target.querySelector('input[name="file"]');
   if (fileInput && fileInput.files.length > 0) {
-    formData.set('file', fileInput.files[0]); // 'set' replaces any existing entry
+    // Web3Forms expects "file" for single file or "attachments[]" for multiple
+    formData.set('file', fileInput.files[0]); 
   }
 
     try {
