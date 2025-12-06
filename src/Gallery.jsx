@@ -75,7 +75,7 @@ export default function Gallery({ initialCount = 3, initialCategory = "All" }) {
                 <p className="mt-4 text-gray-600">{selected.short}</p>
 
                 <ul className="mt-4 list-disc list-inside text-sm text-gray-600">
-                  {selected.specs.map((s, i) => (
+                  {selected.specs?.map((s, i) => (
                     <li key={i}>{s}</li>
                   ))}
                 </ul>
