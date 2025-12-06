@@ -104,7 +104,7 @@ export default function GlassProductsSite() {
             <div className="text-sm text-gray-600 max-w-xl md:text-right leading-relaxed">
               Custom‑crafted works in marble, glass, and hand‑cast designer resin.<br/>
               Advanced lighting and electronic integrations with seamless smartphone control.<br/>
-              Imagery, textures, embedded materials tailored to any artistic or architectural requirement.
+              Imagery, textures, embedded items tailored to any artistic requirement.
             </div>
           </div>
 
