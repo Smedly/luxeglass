@@ -10,7 +10,6 @@ export const tableGallery = [
     thumb: "/images/tables/Top8/Argent-Shard-Thumb.webp",
     large: "/images/tables/Top8/Argent-Shard.webp",
     alt: "Argent Shard hand-cast designer resin table with metallic crystalline texture"
-    specs: [] // add this line
   },
   {
     id: "aurora-moon",
@@ -20,7 +19,6 @@ export const tableGallery = [
     thumb: "/images/tables/Top8/Aurora-Moon-Thumb.webp",
     large: "/images/tables/Top8/Aurora-Moon.webp",
     alt: "Aurora Moon hand-cast designer resin table with soft glowing gradient"
-    specs: [] // add this line
   },
   {
     id: "cold-ice",
@@ -30,7 +28,6 @@ export const tableGallery = [
     thumb: "/images/tables/Top8/Cold-Ice-Thumb.webp",
     large: "/images/tables/Top8/Cold-Ice.webp",
     alt: "Cold Ice designer resin table with crisp frozen texture"
-    specs: [] // add this line
   },
   {
     id: "crystal-cascade",
@@ -40,7 +37,6 @@ export const tableGallery = [
     thumb: "/images/tables/Top8/Crystal-Cascade-Thumb.webp",
     large: "/images/tables/Top8/Crystal-Cascade.webp",
     alt: "Crystal Cascade designer resin table with flowing carved texture"
-    specs: [] // add this line
   },
   {
     id: "crystal-rock",
@@ -50,7 +46,6 @@ export const tableGallery = [
     thumb: "/images/tables/Top8/Crystal-Rock-Thumb.webp",
     large: "/images/tables/Top8/Crystal-Rock.webp",
     alt: "Crystal Rock hand-cast designer resin table with deep crystal-like facets"
-    specs: [] // add this line
   },
   {
     id: "diamond-drift",
@@ -60,7 +55,6 @@ export const tableGallery = [
     thumb: "/images/tables/Top8/Diamond-Drift-Thumb.webp",
     large: "/images/tables/Top8/Diamond-Drift.webp",
     alt: "Diamond Drift designer resin table with shimmering diamond pattern"
-    specs: [] // add this line
   },
   {
     id: "exquisite-berg",
@@ -70,7 +64,6 @@ export const tableGallery = [
     thumb: "/images/tables/Top8/Exquisite-Berg-Thumb.webp",
     large: "/images/tables/Top8/Exquisite-Berg.webp",
     alt: "Exquisite Berg hand-cast designer resin table with carved iceberg texture"
-    specs: [] // add this line
 
   },
   {
@@ -81,7 +74,6 @@ export const tableGallery = [
     thumb: "/images/tables/Top8/Frosted-Ice-Thumb.webp",
     large: "/images/tables/Top8/Frosted-Ice.webp",
     alt: "Frosted Ice designer resin table with smooth frosted texture"
-    specs: [] // add this line
   },
   {
     id: "frostfire",
@@ -91,7 +83,6 @@ export const tableGallery = [
     thumb: "/images/tables/Top12/Frostfire-Thumb.webp",
     large: "/images/tables/Top12/Frostfire.webp",
     alt: "Frostfire hand-cast designer resin table with warm-ice finish"
-    specs: [] // add this line
   },
   {
     id: "ice-cloud",
@@ -101,7 +92,6 @@ export const tableGallery = [
     thumb: "/images/tables/Top12/Ice-Cloud-Thumb.webp",
     large: "/images/tables/Top12/Ice-Cloud.webp",
     alt: "Ice Cloud designer resin table with diffuse cloud-like texture"
-    specs: [] // add this line
   }
 ];
 
