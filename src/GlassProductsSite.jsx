@@ -42,6 +42,12 @@ export default function GlassProductsSite() {
     formData.append('subject', 'New Project Quote Request');
     formData.append('redirect', ''); // optional redirect URL
 
+    // Ensure only one file is appended
+  const fileInput = e.target.elements.file;
+  if (fileInput && fileInput.files.length > 0) {
+    formData.set('file', fileInput.files[0]); // 'set' replaces any existing entry
+  }
+
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -206,8 +212,12 @@ export default function GlassProductsSite() {
               <label className="block text-sm font-medium">Project Details</label>
               <textarea name="message" required className="mt-1 block w-full border px-3 py-2 rounded-md" rows="6" placeholder="Short description, timeline, measurements, location" />
 
-              <label className="block text-sm font-medium">Attach File (optional)</label>
-              <input name="file" type="file" className="mt-1 block w-full border px-3 py-2 rounded-md" />
+              <label className="block text-sm font-medium">Attach File - single file, PDF, JPG, JPEG, PNG, DOC, DOCX (optional)</label>
+              <input 
+                name="file" 
+                type="file" 
+                accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" // adjust allowed types
+                className="mt-1 block w-full border px-3 py-2 rounded-md" />
 
               <div className="flex items-center gap-4 mt-4">
                 <button
