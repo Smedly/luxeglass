@@ -4,13 +4,13 @@ import tableGallery from './galleryData' // uses default export from your galler
 
 function Thumb({ img, onOpen }) {
   return (
-    <article className="bg-white rounded overflow-hidden shadow-sm">
+    <article className="bg-white rounded overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
       <button onClick={() => onOpen(img)} className="w-full text-left">
         <img
           src={img.thumb}
           alt={img.alt}
           loading="lazy"
-          className="w-full h-48 object-cover"
+          className="w-full h-48 object-cover transform transition-transform duration-300 hover:scale-105"
         />
       </button>
       <div className="p-3 text-sm">
@@ -86,19 +86,19 @@ export default function Gallery({ initialCategory = 'All', initialCount = 9 }) {
               <div className="md:w-1/3 p-6">
                 <h3 className="font-bold text-xl">{open.title}</h3>
                 <div className="text-sm text-gray-600 mt-2">
-                  {open.project || 'Click for Details ➡️'} {open.location ? `• ${open.location}` : ''}
+                  {open.project || ''} {open.location ? `• ${open.location}` : ''}
                 </div>
                 <p className="mt-4 text-sm">{open.description}</p>
 
-                {/* Professional quotation text */}
-                <p className="mt-4 text-sm text-gray-700">
-                  To receive an accurate quotation:
-                  <br />
-                  For hand-crafted designer resin tables: please include dimensions, scale, materials, intended environment, functional requirements, any custom imagery, text, or embedded elements, LED or other electronics, and control requirements.
-                  <br />
-                  For sinks, tubs, and showers: please include dimensions, mounting type, drain configuration, and preferred finish/texture.
-                  <br />
-                  Project details: installation location, quantity, timeline, or any logistical considerations. Providing this information helps ensure your quotation is precise, efficient, and tailored to your exact vision.
+                {/* Updated quotation instructions */}
+                <p className="mt-4 text-sm text-gray-700 whitespace-pre-line">
+                  To receive an accurate quotation, please include as many project details as possible:
+
+                  {"\n\n"}For designer resin tables: dimensions, scale, materials, intended environment, functional requirements, custom imagery, text, or embedded elements, LED or other electronics, control requirements, etc..
+
+                  {"\n\n"}For sinks, tubs, and showers: dimensions, mounting type, drain config, preferred finish/texture, etc..
+
+                  {"\n\n"}Project details: installation location, quantity, timeline, logistical considerations.
                 </p>
 
                 {/* Request Quote Button */}
