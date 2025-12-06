@@ -161,7 +161,7 @@ export default function GlassProductsSite() {
               <input className="mt-1 block w-full border px-3 py-2 rounded-md" placeholder="Company / Developer" />
 
               <label className="block text-sm font-medium mt-4">Project details</label>
-              <textarea className="mt-1 block w-full border px-3 py-2 rounded-md" rows="4" placeholder="Short description, timeline, location" />
+              <textarea className="mt-1 block w-full border px-3 py-2 rounded-md" rows="4" placeholder="Short description, timeline, measurements, location" />
 
               <div className="mt-4 flex gap-3">
                 <button type="button" onClick={() => window.location = 'mailto:quote@luxeglass.pro?subject=Project%20Inquiry'} className="px-4 py-2 bg-indigo-600 text-white rounded-md">Email us</button>
