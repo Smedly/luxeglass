@@ -1,13 +1,9 @@
 // src/GlassProductsSite.jsx
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Gallery from './Gallery';
 
 export default function GlassProductsSite() {
   const [selected, setSelected] = useState(null);
-  const [statusMessage, setStatusMessage] = useState('');
-  const [loading, setLoading] = useState(false);
-  const spinnerRef = useRef();
-  const statusRef = useRef();
 
   // Smooth-scroll offset helper
   useEffect(() => {
@@ -33,33 +29,36 @@ export default function GlassProductsSite() {
     setSelected(null);
   }
 
-  async function handleSubmit(e) {
+  // Form submission state
+  const [loading, setLoading] = useState(false);
+  const [statusMessage, setStatusMessage] = useState('');
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setStatusMessage('');
+
     const formData = new FormData(e.target);
-    formData.append('access_key', '831c26d9-9fa8-4b2d-b6e4-d4248267e967'); // Web3Forms API key
-    formData.append('subject', 'New Project Quote Request');
-    formData.append('redirect', ''); // optional redirect URL
 
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         body: formData,
       });
-      const result = await res.json();
+      const result = await response.json();
       if (result.success) {
         setStatusMessage('✅ Your request was successfully sent!');
         e.target.reset();
       } else {
-        setStatusMessage('⚠️ Something went wrong. Please try again.');
+        setStatusMessage('❌ Something went wrong. Please try again.');
       }
-    } catch {
-      setStatusMessage('⚠️ Something went wrong. Please try again.');
+    } catch (err) {
+      console.error(err);
+      setStatusMessage('❌ Something went wrong. Please try again.');
     } finally {
       setLoading(false);
     }
-  }
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
@@ -78,7 +77,7 @@ export default function GlassProductsSite() {
             <a href="#products" className="hover:text-indigo-600">Products</a>
             <a href="#about" className="hover:text-indigo-600">About</a>
             <a href="#contact" className="hover:text-indigo-600">Contact</a>
-            <a href="#contact" className="px-3 py-2 bg-indigo-600 text-white rounded-md text-sm">Request Quote</a>
+            <a href="mailto:quote@luxeglass.pro" className="px-3 py-2 bg-indigo-600 text-white rounded-md text-sm">Request Quote</a>
           </nav>
 
           <button className="md:hidden px-3 py-2 border rounded-md text-sm">Menu</button>
@@ -152,19 +151,11 @@ export default function GlassProductsSite() {
                 developer timelines — sample approvals, mock‑ups, coordinated shipping, and accelerated production
                 windows when required. COAs, load specs, and installation guidance are available for all projects.
               </p>
-
-              <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <li className="p-4 bg-gray-50 rounded-lg"><div className="font-semibold">US‑based PM</div><div className="text-sm text-gray-600 mt-1">Single point of contact for approvals & logistics.</div></li>
-                <li className="p-4 bg-gray-50 rounded-lg"><div className="font-semibold">Quality inspections</div><div className="text-sm text-gray-600 mt-1">Batch testing and final inspection before shipment.</div></li>
-                <li className="p-4 bg-gray-50 rounded-lg"><div className="font-semibold">Custom hardware</div><div className="text-sm text-gray-600 mt-1">Finishes matched to development palettes.</div></li>
-                <li className="p-4 bg-gray-50 rounded-lg"><div className="font-semibold">Warranty & Support</div><div className="text-sm text-gray-600 mt-1">Project warranties and installation guidance.</div></li>
-              </ul>
             </div>
 
             <aside className="p-6 bg-gradient-to-b from-white to-gray-50 rounded-lg">
               <div className="font-semibold">Project Inquiry</div>
               <p className="mt-2 text-sm text-gray-600">Tell us briefly about your project and we'll prepare scope & timeline options.</p>
-
               <dl className="mt-4 text-sm text-gray-600 space-y-2">
                 <div><dt className="font-medium">Lead contact</dt><dd>Project Manager — <span className="font-semibold">(303) 884-2918</span></dd></div>
                 <div><dt className="font-medium">Email</dt><dd>quote@luxeglass.pro</dd></div>
@@ -176,72 +167,57 @@ export default function GlassProductsSite() {
           </div>
         </section>
 
-        {/* Contact */}
+        {/* Contact Form */}
         <section id="contact" className="max-w-6xl mx-auto px-6 py-12 scroll-mt-28">
           <h2 className="text-2xl font-bold">Contact & Request Quote</h2>
-          <p className="mt-2 text-sm text-gray-600">
-            Prefer direct contact? Email or phone listed below — or use the quick form to request a project quote.
-          </p>
+          <p className="mt-2 text-sm text-gray-600">Prefer direct contact? Email or phone listed below — or use the quick form to request a project quote.</p>
 
           <form
             onSubmit={handleSubmit}
             encType="multipart/form-data"
             className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 bg-white p-6 rounded-lg shadow-sm"
           >
-            <div className="space-y-4">
+            <div className="flex flex-col gap-4">
               <label className="block text-sm font-medium">Name</label>
-              <input name="name" required className="mt-1 block w-full border px-3 py-2 rounded-md" placeholder="Your name" />
-
-              <label className="block text-sm font-medium">Email</label>
-              <input name="email" type="email" required className="mt-1 block w-full border px-3 py-2 rounded-md" placeholder="Your email" />
+              <input name="name" required className="mt-1 block w-full border px-3 py-2 rounded-md" placeholder="Name" />
 
               <label className="block text-sm font-medium">Phone</label>
-              <input name="phone" className="mt-1 block w-full border px-3 py-2 rounded-md" placeholder="Your phone" />
+              <input name="phone" className="mt-1 block w-full border px-3 py-2 rounded-md" placeholder="Phone" />
+
+              <label className="block text-sm font-medium">Company / Developer</label>
+              <input name="company" className="mt-1 block w-full border px-3 py-2 rounded-md" placeholder="Company / Developer" />
 
               <label className="block text-sm font-medium">Project Type</label>
-              <input name="project_type" className="mt-1 block w-full border px-3 py-2 rounded-md" placeholder="Resin Table, Sink, etc." />
-            </div>
+              <input name="projectType" className="mt-1 block w-full border px-3 py-2 rounded-md" placeholder="Project Type" />
 
-            <div className="space-y-4">
               <label className="block text-sm font-medium">Project Details</label>
-              <textarea name="message" required className="mt-1 block w-full border px-3 py-2 rounded-md" rows="6" placeholder="Short description, timeline, measurements, location" />
+              <textarea name="details" required className="mt-1 block w-full border px-3 py-2 rounded-md" rows={4} placeholder="Short description, timeline, measurements, location" />
 
-              <label className="block text-sm font-medium">Attach File (optional)</label>
-              <input name="file" type="file" className="mt-1 block w-full border px-3 py-2 rounded-md" />
-
-              <div className="flex items-center gap-4 mt-4">
-                <button
-                  type="submit"
-                  className="px-4 py-2 bg-indigo-600 text-white rounded-md relative flex items-center"
-                >
-                  {loading && (
-                    <span className="loader mr-2" ref={spinnerRef}>
-                      <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
-                      </svg>
-                    </span>
-                  )}
-                  Send Request
-                </button>
-
-                {statusMessage && (
-                  <span
-                    ref={statusRef}
-                    className="transition-opacity duration-500 text-sm"
-                  >
-                    {statusMessage}
-                  </span>
-                )}
-              </div>
+              <label className="block text-sm font-medium">Attach File</label>
+              <input type="file" name="attachment" className="mt-1 block w-full" />
             </div>
+
+            <div className="flex flex-col justify-start gap-4">
+              <button
+                type="submit"
+                disabled={loading}
+                className={`px-4 py-2 bg-indigo-600 text-white rounded-md ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
+              >
+                {loading ? 'Sending…' : 'Send Request'}
+              </button>
+
+              {statusMessage && (
+                <div className={`transition-all duration-500 mt-2 text-sm ${statusMessage.includes('✅') ? 'text-green-600' : 'text-red-600'}`}>
+                  {statusMessage}
+                </div>
+              )}
+            </div>
+
           </form>
 
-          <div className="mt-6 bg-white p-6 rounded-lg shadow-sm">
-            <h3 className="font-semibold">Direct Contact</h3>
-            <p className="mt-2 text-sm text-gray-600">
-              We respond to project inquiries during business hours. Include timeline & approximate scope for accurate quoting.
-            </p>
+          <div className="mt-8 bg-white p-6 rounded-lg shadow-sm">
+            <h3 className="font-semibold">Direct contact</h3>
+            <p className="mt-2 text-sm text-gray-600">We respond to project inquiries during business hours. Include timeline & approximate scope for accurate quoting.</p>
             <div className="mt-4 text-sm space-y-2">
               <div><strong>Phone:</strong> (303) 884-2918</div>
               <div><strong>Email:</strong> quote@luxeglass.pro</div>
