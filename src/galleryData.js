@@ -378,8 +378,8 @@ export const galleryData = [
     category: "Sinks",
     title: "Flow State Sink",
     description: "A luminous stained-glass basin featuring warm radiant tones reminiscent of a glowing sun.",
-    thumb: "/public/images/sinks/Flow-State-Thumb.webp",
-    large: "/public/images/sinks/Flow-State.webp",
+    thumb: "/images/sinks/Flow-State-Thumb.webp",
+    large: "/images/sinks/Flow-State.webp",
     alt: "Flow State stained glass sink with glowing sun-inspired coloration"
   },
   {
@@ -387,8 +387,8 @@ export const galleryData = [
     category: "Sinks",
     title: "Hydra Rise Sink",
     description: "A stained-glass vessel with rich autumn-leaf hues flowing through organic layered textures.",
-    thumb: "/public/images/sinks/Hydra-Rise-Thumb.webp",
-    large: "/public/images/sinks/Hydra-Rise.webp",
+    thumb: "/images/sinks/Hydra-Rise-Thumb.webp",
+    large: "/images/sinks/Hydra-Rise.webp",
     alt: "Hydra Rise stained glass sink with warm autumn leaf colors"
   },
   {
@@ -396,8 +396,8 @@ export const galleryData = [
     category: "Sinks",
     title: "The Celeste Basin",
     description: "A stained-glass sink evoking the feeling of springtime, with soft airy color transitions.",
-    thumb: "/public/images/sinks/The-Celeste-Basin-Thumb.webp",
-    large: "/public/images/sinks/The-Celeste-Basin.webp",
+    thumb: "/images/sinks/The-Celeste-Basin-Thumb.webp",
+    large: "/images/sinks/The-Celeste-Basin.webp",
     alt: "Celeste Basin stained glass sink with springtime-inspired colors"
   },
   {
@@ -405,8 +405,8 @@ export const galleryData = [
     category: "Sinks",
     title: "The Elysian Sink",
     description: "A richly toned stained-glass basin echoing the depth and calm of a late-afternoon forest.",
-    thumb: "/public/images/sinks/The-Elysian-Thumb.webp",
-    large: "/public/images/sinks/The-Elysian.webp",
+    thumb: "/images/sinks/The-Elysian-Thumb.webp",
+    large: "/images/sinks/The-Elysian.webp",
     alt: "Elysian stained glass sink with deep afternoon-forest colors"
   },
   {
@@ -423,8 +423,8 @@ export const galleryData = [
     category: "Sinks",
     title: "Verdant Reliquary Sink",
     description: "A deeply saturated stained-glass sink glowing with forest-green tones for a natural, immersive feel.",
-    thumb: "/public/images/sinks/Verdant-Reliquary-Thumb.webp",
-    large: "/public/images/sinks/Verdant-Reliquary.webp",
+    thumb: "/images/sinks/Verdant-Reliquary-Thumb.webp",
+    large: "/images/sinks/Verdant-Reliquary.webp",
     alt: "Verdant Reliquary stained glass sink with lush forest green coloration"
   }
 ];
