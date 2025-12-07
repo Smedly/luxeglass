@@ -16,7 +16,7 @@ function Thumb({ img, onOpen }) {
       <div className="p-3 text-sm">
         <div className="font-semibold">{img.title}</div>
         <div className="text-xs text-gray-500">
-          {img.project || 'Click for Details ➡️'} {img.location ? `• ${img.location}` : ''}
+          {img.project || 'Click for Details ⬆️'} {img.location ? `• ${img.location}` : ''}
         </div>
       </div>
     </article>
@@ -88,7 +88,7 @@ export default function Gallery({ initialCategory = 'All', initialCount = 9 }) {
                 <div className="text-sm text-gray-600 mt-2">
                   {open.project || ''} {open.location ? `• ${open.location}` : ''}
                 </div>
-                <p className="mt-4 text-sm">{open.description}</p>
+                <p className="mt-4 text-sm font-serif italic text-gray-800">{open.description}</p>
 
                 {/* Updated quotation instructions */}
                 <p className="mt-4 text-sm text-gray-700 whitespace-pre-line">
