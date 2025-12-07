@@ -414,8 +414,8 @@ export const galleryData = [
     category: "Sinks",
     title: "The Opaline Sink",
     description: "A stained-glass vessel inspired by serene jungle atmospheres, blending layered greens and soft light.",
-    thumb: "/public/images/sinks/The-Opaline-Thumb.webp",
-    large: "/public/images/sinks/The-Opaline.webp",
+    thumb: "/images/sinks/The-Opaline-Thumb.webp",
+    large: "/images/sinks/The-Opaline.webp",
     alt: "Opaline stained glass sink with tranquil jungle-inspired hues"
   },
   {
