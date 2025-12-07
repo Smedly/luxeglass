@@ -37,24 +37,19 @@ export default function GlassProductsSite() {
     e.preventDefault();
     setLoading(true);
     setStatusMessage('');
-    const formData = new FormData(e.target);
-    formData.append('access_key', '831c26d9-9fa8-4b2d-b6e4-d4248267e967'); // Web3Forms API key
-    formData.append('subject', 'New Project Quote Request');
-    formData.append('redirect', ''); // optional redirect URL
 
-    // Make sure the file is included correctly
-  const fileInput = e.target.querySelector('input[name="file"]');
-  if (fileInput && fileInput.files.length > 0) {
-    // Web3Forms expects "file" for single file or "attachments[]" for multiple
-    formData.set('file', fileInput.files[0]); 
-  }
+    const formData = new FormData(e.target);
+    formData.append('access_key', '831c26d9-9fa8-4b2d-b6e4-d4248267e967');
+    formData.append('subject', 'New Project Quote Request');
+    formData.append('redirect', '');
 
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: formData,
+        body: formData
       });
       const result = await res.json();
+
       if (result.success) {
         setStatusMessage('✅ Your request was successfully sent!');
         e.target.reset();
@@ -77,7 +72,7 @@ export default function GlassProductsSite() {
             <img src="/images/logos/luxe-glass-logo.webp" alt="Luxe Glass Logo" className="h-10 w-auto" />
             <div>
               <div className="font-semibold">Luxe Glass Colorado</div>
-              <div className="text-xs text-gray-500">Architectural glass, marble & hand‑cast designer resin</div>
+              <div className="text-xs text-gray-500">Architectural glass, marble & hand-cast designer resin</div>
             </div>
           </div>
 
@@ -103,7 +98,7 @@ export default function GlassProductsSite() {
 
               <p className="mt-4 text-lg text-gray-600">
                 We work directly with architects and developers to deliver signature elements crafted in glass, marble,
-                and hand‑cast designer resin. From sculptural statement pieces to functional architectural components,
+                and hand-cast designer resin. From sculptural statement pieces to functional architectural components,
                 every project is engineered for longevity, precision and visual impact.
               </p>
 
@@ -113,8 +108,8 @@ export default function GlassProductsSite() {
               </div>
 
               <ul className="mt-6 grid grid-cols-2 gap-2 text-sm text-gray-600">
-                <li>Made‑to‑spec samples</li>
-                <li>US‑based project manager</li>
+                <li>Made-to-spec samples</li>
+                <li>US-based project manager</li>
                 <li>Warranty & installation guidance</li>
                 <li>Custom finishes & embedded materials</li>
               </ul>
@@ -138,7 +133,7 @@ export default function GlassProductsSite() {
           <div className="flex items-center justify-between flex-col md:flex-row gap-6 md:gap-0">
             <h2 className="text-2xl font-bold whitespace-nowrap">Selected Projects & Signature Pieces</h2>
             <div className="text-sm text-gray-600 max-w-xl md:text-right leading-relaxed">
-              Custom‑crafted works in marble, glass, and hand‑cast designer resin.<br/>
+              Custom-crafted works in marble, glass, and hand-cast designer resin.<br/>
               Advanced lighting and electronic integrations with seamless smartphone control.<br/>
               Imagery, textures, embedded items tailored to any artistic requirement.
             </div>
@@ -155,13 +150,13 @@ export default function GlassProductsSite() {
             <div className="md:col-span-2">
               <h3 className="text-2xl font-bold">Why developers choose us</h3>
               <p className="mt-4 text-gray-600 leading-relaxed">
-                We focus exclusively on high‑end residential and commercial developments. Our processes align with
-                developer timelines — sample approvals, mock‑ups, coordinated shipping, and accelerated production
+                We focus exclusively on high-end residential and commercial developments. Our processes align with
+                developer timelines — sample approvals, mock-ups, coordinated shipping, and accelerated production
                 windows when required. COAs, load specs, and installation guidance are available for all projects.
               </p>
 
               <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <li className="p-4 bg-gray-50 rounded-lg"><div className="font-semibold">US‑based PM</div><div className="text-sm text-gray-600 mt-1">Single point of contact for approvals & logistics.</div></li>
+                <li className="p-4 bg-gray-50 rounded-lg"><div className="font-semibold">US-based PM</div><div className="text-sm text-gray-600 mt-1">Single point of contact for approvals & logistics.</div></li>
                 <li className="p-4 bg-gray-50 rounded-lg"><div className="font-semibold">Quality inspections</div><div className="text-sm text-gray-600 mt-1">Batch testing and final inspection before shipment.</div></li>
                 <li className="p-4 bg-gray-50 rounded-lg"><div className="font-semibold">Custom hardware</div><div className="text-sm text-gray-600 mt-1">Finishes matched to development palettes.</div></li>
                 <li className="p-4 bg-gray-50 rounded-lg"><div className="font-semibold">Warranty & Support</div><div className="text-sm text-gray-600 mt-1">Project warranties and installation guidance.</div></li>
@@ -175,7 +170,7 @@ export default function GlassProductsSite() {
               <dl className="mt-4 text-sm text-gray-600 space-y-2">
                 <div><dt className="font-medium">Lead contact</dt><dd>Project Manager — <span className="font-semibold">(303) 884-2918</span></dd></div>
                 <div><dt className="font-medium">Email</dt><dd>quote@luxeglass.pro</dd></div>
-                <div><dt className="font-medium">Office</dt><dd>Denver, CO • US‑based coordination</dd></div>
+                <div><dt className="font-medium">Office</dt><dd>Denver, CO • US-based coordination</dd></div>
               </dl>
 
               <a href="#contact" className="mt-4 inline-block px-4 py-2 bg-indigo-600 text-white rounded-md">Start a conversation</a>
@@ -192,7 +187,6 @@ export default function GlassProductsSite() {
 
           <form
             onSubmit={handleSubmit}
-            encType="multipart/form-data"
             className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 bg-white p-6 rounded-lg shadow-sm"
           >
             <div className="space-y-4">
@@ -211,14 +205,22 @@ export default function GlassProductsSite() {
 
             <div className="space-y-4">
               <label className="block text-sm font-medium">Project Details</label>
-              <textarea name="message" required className="mt-1 block w-full border px-3 py-2 rounded-md" rows="6" placeholder="Short description, timeline, measurements, location" />
+              <textarea
+                name="message"
+                required
+                className="mt-1 block w-full border px-3 py-2 rounded-md"
+                rows="6"
+                placeholder="Short description, timeline, measurements, location"
+              />
 
-              <label className="block text-sm font-medium">Attach File - single file, PDF, JPG, JPEG, PNG, DOC, DOCX (optional)</label>
-              <input 
-                name="file" 
-                type="file" 
-                accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" // adjust allowed types
-                className="mt-1 block w-full border px-3 py-2 rounded-md" />
+              {/* NEW FIELD – Google Drive / Dropbox link */}
+              <label className="block text-sm font-medium">Project File Link (Google Drive, Dropbox, etc.)</label>
+              <input
+                name="project_file_link"
+                type="url"
+                placeholder="https://drive.google.com/... or https://www.dropbox.com/..."
+                className="mt-1 block w-full border px-3 py-2 rounded-md"
+              />
 
               <div className="flex items-center gap-4 mt-4">
                 <button
@@ -237,10 +239,7 @@ export default function GlassProductsSite() {
                 </button>
 
                 {statusMessage && (
-                  <span
-                    ref={statusRef}
-                    className="transition-opacity duration-500 text-sm"
-                  >
+                  <span ref={statusRef} className="transition-opacity duration-500 text-sm">
                     {statusMessage}
                   </span>
                 )}
@@ -256,7 +255,7 @@ export default function GlassProductsSite() {
             <div className="mt-4 text-sm space-y-2">
               <div><strong>Phone:</strong> (303) 884-2918</div>
               <div><strong>Email:</strong> quote@luxeglass.pro</div>
-              <div><strong>Address:</strong> Denver, CO (US‑based coordination)</div>
+              <div><strong>Address:</strong> Denver, CO (US-based coordination)</div>
             </div>
           </div>
         </section>
@@ -266,7 +265,7 @@ export default function GlassProductsSite() {
           <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-start justify-between gap-6">
             <div>
               <div className="font-semibold text-white">Luxe Glass Colorado</div>
-              <div className="text-sm mt-2">High‑end architectural materials — Developed for the North American market.</div>
+              <div className="text-sm mt-2">High-end architectural materials — Developed for the North American market.</div>
             </div>
 
             <div className="text-sm">
