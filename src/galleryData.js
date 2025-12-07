@@ -434,11 +434,263 @@ export const galleryData = [
   {
     id: "curved-p-9324",
     category: "Showers",
-    title: "Curved P-9324",
-    description: "It's like a donut.",
+    title: "Curved Shower",
+    description: "A gracefully curved enclosure that adds fluid elegance to any bathroom.",
     thumb: "/images/showers/Curved-P-9324-Thumb.webp",
     large: "/images/showers/Curved-P-9324.webp",
-    alt: "meet mr. slim"
+    alt: "Curved shower enclosure"
+  },
+  {
+    id: "custom-p2",
+    category: "Showers",
+    title: "Custom Shower",
+    description: "A bespoke shower design blending modernity with sculptural form.",
+    thumb: "/images/showers/Custom-P2-Thumb.webp",
+    large: "/images/showers/Custom-P2.webp",
+    alt: "Custom shower enclosure"
+  },
+  {
+    id: "custom-p3",
+    category: "Showers",
+    title: "Custom Shower",
+    description: "An elegant, tailored shower that transforms space with refined geometry.",
+    thumb: "/images/showers/Custom-P3-Thumb.webp",
+    large: "/images/showers/Custom-P3.webp",
+    alt: "Custom shower enclosure"
+  },
+  {
+    id: "custom-p4",
+    category: "Showers",
+    title: "Custom Shower",
+    description: "A unique enclosure offering airy sophistication and contemporary lines.",
+    thumb: "/images/showers/Custom-P4-Thumb.webp",
+    large: "/images/showers/Custom-P4.webp",
+    alt: "Custom shower enclosure"
+  },
+  {
+    id: "flat-p-25pf",
+    category: "Showers",
+    title: "Flat Opening Shower",
+    description: "A clean, minimalist shower that emphasizes linear precision and space.",
+    thumb: "/images/showers/Flat-P-25PF-Thumb.webp",
+    large: "/images/showers/Flat-P-25PF.webp",
+    alt: "Flat opening shower enclosure"
+  },
+  {
+    id: "flat-p-252a",
+    category: "Showers",
+    title: "Flat Opening Shower",
+    description: "A sleek, contemporary design defined by smooth, open planes.",
+    thumb: "/images/showers/Flat-P-252A-Thumb.webp",
+    large: "/images/showers/Flat-P-252A.webp",
+    alt: "Flat opening shower enclosure"
+  },
+  {
+    id: "flat-p-1530a",
+    category: "Showers",
+    title: "Flat Opening Shower",
+    description: "A streamlined enclosure that combines clarity with architectural elegance.",
+    thumb: "/images/showers/Flat-P-1530A-Thumb.webp",
+    large: "/images/showers/Flat-P-1530A.webp",
+    alt: "Flat opening shower enclosure"
+  },
+  {
+    id: "flat-p-3016a",
+    category: "Showers",
+    title: "Flat Opening Shower",
+    description: "A refined, minimalist shower that enhances light and openness.",
+    thumb: "/images/showers/Flat-P-3016A-Thumb.webp",
+    large: "/images/showers/Flat-P-3016A.webp",
+    alt: "Flat opening shower enclosure"
+  },
+  {
+    id: "flat-p-3018a",
+    category: "Showers",
+    title: "Flat Opening Shower",
+    description: "An understated yet sophisticated design emphasizing geometric simplicity.",
+    thumb: "/images/showers/Flat-P-3018A-Thumb.webp",
+    large: "/images/showers/Flat-P-3018A.webp",
+    alt: "Flat opening shower enclosure"
+  },
+  {
+    id: "flat-p-3515",
+    category: "Showers",
+    title: "Flat Opening Shower",
+    description: "A contemporary shower with clean lines and open, airy form.",
+    thumb: "/images/showers/Flat-P-3515-Thumb.webp",
+    large: "/images/showers/Flat-P-3515.webp",
+    alt: "Flat opening shower enclosure"
+  },
+  {
+    id: "sliding-p-1n",
+    category: "Showers",
+    title: "Sliding Shower",
+    description: "A smoothly sliding enclosure offering modern elegance and seamless flow.",
+    thumb: "/images/showers/Sliding-P-1N-Thumb.webp",
+    large: "/images/showers/Sliding-P-1N.webp",
+    alt: "Sliding shower enclosure"
+  },
+  {
+    id: "sliding-p-5161",
+    category: "Showers",
+    title: "Sliding Shower",
+    description: "A sleek, linear shower design emphasizing effortless movement.",
+    thumb: "/images/showers/Sliding-P-5161-Thumb.webp",
+    large: "/images/showers/Sliding-P-5161.webp",
+    alt: "Sliding shower enclosure"
+  },
+  {
+    id: "sliding-p-8765",
+    category: "Showers",
+    title: "Sliding Shower",
+    description: "A minimalist enclosure that blends function with refined modern form.",
+    thumb: "/images/showers/Sliding-P-8765-Thumb.webp",
+    large: "/images/showers/Sliding-P-8765.webp",
+    alt: "Sliding shower enclosure"
+  },
+  {
+    id: "sliding-p-8866",
+    category: "Showers",
+    title: "Sliding Shower",
+    description: "A graceful shower emphasizing sleek panels and effortless motion.",
+    thumb: "/images/showers/Sliding-P-8866-Thumb.webp",
+    large: "/images/showers/Sliding-P-8866.webp",
+    alt: "Sliding shower enclosure"
+  },
+  {
+    id: "sliding-p-8965",
+    category: "Showers",
+    title: "Sliding Shower",
+    description: "A contemporary design that elevates daily bathing with smooth elegance.",
+    thumb: "/images/showers/Sliding-P-8965-Thumb.webp",
+    large: "/images/showers/Sliding-P-8965.webp",
+    alt: "Sliding shower enclosure"
+  },
+  {
+    id: "sliding-p-9465",
+    category: "Showers",
+    title: "Sliding Shower",
+    description: "A modern enclosure with flowing lines and effortless sophistication.",
+    thumb: "/images/showers/Sliding-P-9465-Thumb.webp",
+    large: "/images/showers/Sliding-P-9465.webp",
+    alt: "Sliding shower enclosure"
+  },
+  {
+    id: "sliding-p-9865",
+    category: "Showers",
+    title: "Sliding Shower",
+    description: "A minimalist sliding shower that combines clarity with modern grace.",
+    thumb: "/images/showers/Sliding-P-9865-Thumb.webp",
+    large: "/images/showers/Sliding-P-9865.webp",
+    alt: "Sliding shower enclosure"
+  },
+  {
+    id: "square-p-25zs",
+    category: "Showers",
+    title: "Diamond-Shaped Square Shower",
+    description: "A geometric enclosure creating a bold, contemporary centerpiece.",
+    thumb: "/images/showers/Square-P-25ZS-Thumb.webp",
+    large: "/images/showers/Square-P-25ZS.webp",
+    alt: "Diamond-shaped square shower enclosure"
+  },
+  {
+    id: "square-p-1530b",
+    category: "Showers",
+    title: "Diamond-Shaped Square Shower",
+    description: "A striking square design that blends sharp angles with modern elegance.",
+    thumb: "/images/showers/Square-P-1530B-Thumb.webp",
+    large: "/images/showers/Square-P-1530B.webp",
+    alt: "Diamond-shaped square shower enclosure"
+  },
+  {
+    id: "square-p-2642zs",
+    category: "Showers",
+    title: "Diamond-Shaped Square Shower",
+    description: "A sculptural square shower that enhances space with architectural clarity.",
+    thumb: "/images/showers/Square-P-2642ZS-Thumb.webp",
+    large: "/images/showers/Square-P-2642ZS.webp",
+    alt: "Diamond-shaped square shower enclosure"
+  },
+  {
+    id: "square-p-3016fx",
+    category: "Showers",
+    title: "Diamond-Shaped Square Shower",
+    description: "A refined enclosure emphasizing geometric sophistication and open form.",
+    thumb: "/images/showers/Square-P-3016FX-Thumb.webp",
+    large: "/images/showers/Square-P-3016FX.webp",
+    alt: "Diamond-shaped square shower enclosure"
+  },
+  {
+    id: "square-p-3018fx",
+    category: "Showers",
+    title: "Diamond-Shaped Square Shower",
+    description: "A contemporary shower combining sharp angles with subtle elegance.",
+    thumb: "/images/showers/Square-P-3018FX-Thumb.webp",
+    large: "/images/showers/Square-P-3018FX.webp",
+    alt: "Diamond-shaped square shower enclosure"
+  },
+  {
+    id: "square-p-3515fx",
+    category: "Showers",
+    title: "Diamond-Shaped Square Shower",
+    description: "A minimalist square shower with sculptural lines and modern refinement.",
+    thumb: "/images/showers/Square-P-3515FX-Thumb.webp",
+    large: "/images/showers/Square-P-3515FX.webp",
+    alt: "Diamond-shaped square shower enclosure"
+  },
+  {
+    id: "square-p-9336",
+    category: "Showers",
+    title: "Diamond-Shaped Square Shower",
+    description: "An elegant geometric enclosure that elevates the bathroom with clarity.",
+    thumb: "/images/showers/Square-P-9336-Thumb.webp",
+    large: "/images/showers/Square-P-9336.webp",
+    alt: "Diamond-shaped square shower enclosure"
+  },
+  {
+    id: "square-p-9337",
+    category: "Showers",
+    title: "Diamond-Shaped Square Shower",
+    description: "A sophisticated square design balancing sharp geometry with airy space.",
+    thumb: "/images/showers/Square-P-9337-Thumb.webp",
+    large: "/images/showers/Square-P-9337.webp",
+    alt: "Diamond-shaped square shower enclosure"
+  },
+  {
+    id: "tdoor-p-2552tx",
+    category: "Showers",
+    title: "T-Shaped Shower",
+    description: "A modern T-shaped shower that defines space with architectural elegance.",
+    thumb: "/images/showers/TDoor-P-2552TX-Thumb.webp",
+    large: "/images/showers/TDoor-P-2552TX.webp",
+    alt: "T-shaped shower enclosure"
+  },
+  {
+    id: "tdoor-p-3016ex",
+    category: "Showers",
+    title: "T-Shaped Shower",
+    description: "A refined T-shaped enclosure combining contemporary form with airy openness.",
+    thumb: "/images/showers/TDoor-P-3016EX-Thumb.webp",
+    large: "/images/showers/TDoor-P-3016EX.webp",
+    alt: "T-shaped shower enclosure"
+  },
+  {
+    id: "tdoor-p-3018tx",
+    category: "Showers",
+    title: "T-Shaped Shower",
+    description: "A sleek, geometric shower that elevates the bathroom with modernity.",
+    thumb: "/images/showers/TDoor-P-3018TX-Thumb.webp",
+    large: "/images/showers/TDoor-P-3018TX.webp",
+    alt: "T-shaped shower enclosure"
+  },
+  {
+    id: "tdoor-p-5113b",
+    category: "Showers",
+    title: "T-Shaped Shower",
+    description: "An architectural T-shaped enclosure with clean lines and refined form.",
+    thumb: "/images/showers/TDoor-P-5113B-Thumb.webp",
+    large: "/images/showers/TDoor-P-5113B.webp",
+    alt: "T-shaped shower enclosure"
   }
 ];
 
