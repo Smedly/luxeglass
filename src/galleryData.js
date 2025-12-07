@@ -1,9 +1,9 @@
 // src/galleryData.js
-// Gallery data — filenames preserved exactly as provided.
-// Descriptions are material-first, category-labeled, and short/poetic.
+// Unified gallery data for all categories: Tables, Bathtubs, etc.
+// Each item includes: id, category, title, description, thumb, large, alt.
 
-export const tableGallery = [
-  // Top8
+export const galleryData = [
+  // --- TABLES --------------------------------------------------------
   {
     id: "argent-shard",
     category: "Tables",
@@ -77,7 +77,7 @@ export const tableGallery = [
     alt: "Hand-cast resin table with matte frosted finish and etching"
   },
 
-  // Top12
+  // --- TABLES Top12 extra -------------------------------------------
   {
     id: "frostfire",
     category: "Tables",
@@ -97,7 +97,7 @@ export const tableGallery = [
     alt: "Hand-cast resin table with soft diffuse translucency"
   },
 
-  // Final Tables
+  // — Final table set --------------------------------------------------
   {
     id: "white-jade",
     category: "Tables",
@@ -286,15 +286,9 @@ export const tableGallery = [
     thumb: "/images/tables/Top12/Starlit-Quartz-Thumb.webp",
     large: "/images/tables/Top12/Starlit-Quartz.webp",
     alt: "Stone table with rose quartz inflections and warm reflection"
-  }
-];
+  },
 
-
-// -------------------------
-// Bathtub Gallery
-// -------------------------
-
-export const bathtubGallery = [
+  // --- BATHTUBS -------------------------------------------------------
   {
     id: "abyss-edition",
     category: "Bathtubs",
@@ -326,7 +320,7 @@ export const bathtubGallery = [
     id: "emerald-psalm",
     category: "Bathtubs",
     title: "Emerald Psalm",
-    description: "Glass bathtub — ice-blue translucent glass with sculpted surfaces that create lyrical, water-like reflections.",
+    description: "Glass bathtub — ice‑blue translucent glass with sculpted surfaces that create lyrical, water-like reflections.",
     thumb: "/images/tubs/Emerald-Psalm-Thumb.webp",
     large: "/images/tubs/Emerald-Psalm.webp",
     alt: "Ice-blue glass bathtub with sculpted reflective surfaces"
@@ -335,9 +329,9 @@ export const bathtubGallery = [
     id: "neptunes-veil",
     category: "Bathtubs",
     title: "Neptune's Veil",
-    description: "Glass bathtub — vibrant bright-pink glass formed in fluid organic curves for a dramatic color-forward statement.",
-    thumb: "/images/tubs/Neptunes-Veil-Thumb.webp",
-    large: "/images/tubs/Neptunes-Veil.webp",
+    description: "Glass bathtub — vibrant bright‑pink glass formed in fluid organic curves for a dramatic color-forward statement.",
+    thumb: "/images/tubs/Neptune's-Veil-Thumb.webp",
+    large: "/images/tubs/Neptune's-Veil.webp",
     alt: "Bright pink glass bathtub with flowing organic contours"
   },
   {
@@ -353,7 +347,7 @@ export const bathtubGallery = [
     id: "rose-seraphina",
     category: "Bathtubs",
     title: "Rose Seraphina",
-    description: "Glass bathtub — ice-blue glass with carved wave impressions that create ethereal, luminous refractions.",
+    description: "Glass bathtub — ice‑blue glass with carved wave impressions that create ethereal, luminous refractions.",
     thumb: "/images/tubs/Rose-Seraphina-Thumb.webp",
     large: "/images/tubs/Rose-Seraphina.webp",
     alt: "Ice-blue glass bathtub with carved wave-like impressions"
@@ -369,12 +363,4 @@ export const bathtubGallery = [
   }
 ];
 
-
-// -------------------------
-// Unified Default Export
-// -------------------------
-
-export default {
-  tableGallery,
-  bathtubGallery
-};
+export default galleryData;
