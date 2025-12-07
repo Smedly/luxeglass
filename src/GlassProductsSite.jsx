@@ -200,7 +200,7 @@ export default function GlassProductsSite() {
               <input name="phone" className="mt-1 block w-full border px-3 py-2 rounded-md" placeholder="Your phone" />
 
               <label className="block text-sm font-medium">Project Type</label>
-              <input name="project_type" className="mt-1 block w-full border px-3 py-2 rounded-md" placeholder="Resin Table, Sink, etc." />
+              <input name="project_type" className="mt-1 block w-full border px-3 py-2 rounded-md" placeholder="Resin Table, Tub, Sink, Shower, etc." />
             </div>
 
             <div className="space-y-4">
@@ -210,7 +210,7 @@ export default function GlassProductsSite() {
                 required
                 className="mt-1 block w-full border px-3 py-2 rounded-md"
                 rows="6"
-                placeholder="Short description, timeline, measurements, location"
+                placeholder="Short description, timeline, measurements, location, quantity, budget, etc."
               />
 
               {/* NEW FIELD – Google Drive / Dropbox link */}
