@@ -431,7 +431,7 @@ export const galleryData = [
 
  // --- SHOWERS -------------------------------------------------------
 
-  {{
+  {
     id: "curved-p-9324",
     category: "Showers",
     title: "Curved P-9324",
