@@ -330,8 +330,8 @@ export const galleryData = [
     category: "Bathtubs",
     title: "Neptune's Veil",
     description: "Glass bathtub — vibrant bright‑pink glass formed in fluid organic curves for a dramatic color-forward statement.",
-    thumb: "/images/tubs/Neptune's-Veil-Thumb.webp",
-    large: "/images/tubs/Neptune's-Veil.webp",
+    thumb: "/images/tubs/Neptunes-Veil-Thumb.webp",
+    large: "/images/tubs/Neptunes-Veil.webp",
     alt: "Bright pink glass bathtub with flowing organic contours"
   },
   {
