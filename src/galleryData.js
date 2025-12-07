@@ -427,6 +427,18 @@ export const galleryData = [
     thumb: "/images/sinks/Verdant-Reliquary-Thumb.webp",
     large: "/images/sinks/Verdant-Reliquary.webp",
     alt: "Verdant Reliquary stained glass sink with lush forest green coloration"
+  },
+
+ // --- SHOWERS -------------------------------------------------------
+
+  {{
+    id: "curved-p-9324",
+    category: "Showers",
+    title: "Curved P-9324",
+    description: "It's like a donut.",
+    thumb: "/images/showers/Curved-P-9324.webp.webp",
+    large: "/images/showers/Curved-P-9324.webp.webp",
+    alt: "meet mr. slim"
   }
 ];
 
