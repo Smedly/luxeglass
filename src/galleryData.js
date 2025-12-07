@@ -365,14 +365,15 @@ export const galleryData = [
  // --- SINKS -------------------------------------------------------
 
   {
-    id: "chloris",
-    category: "Sinks",
-    title: "Chloris Sink",
-    description: "A stained-glass basin inspired by floral motifs, glowing with layered botanical color.",
-    thumb: "/images/sinks/Chloris-Thumb.webp",
-    large: "/images/sinks/Chloris.webp",
-    alt: "Chloris stained glass sink with radiant floral patterns"
+  id: "chloris",
+  category: "Sinks",
+  title: "Chloris Sink",
+  description: "A stained-glass basin inspired by floral motifs, glowing with layered botanical color.",
+  thumb: "/images/sinks/Chloris-Thumb.webp",
+  large: "/images/sinks/Chloris.webp",
+  alt: "Chloris stained glass sink with radiant floral patterns"
   },
+
   {
     id: "flow-state",
     category: "Sinks",
