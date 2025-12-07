@@ -436,8 +436,8 @@ export const galleryData = [
     category: "Showers",
     title: "Curved P-9324",
     description: "It's like a donut.",
-    thumb: "/images/showers/Curved-P-9324.webp.webp",
-    large: "/images/showers/Curved-P-9324.webp.webp",
+    thumb: "/images/showers/Curved-P-9324.webp",
+    large: "/images/showers/Curved-P-9324.webp",
     alt: "meet mr. slim"
   }
 ];
