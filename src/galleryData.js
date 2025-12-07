@@ -290,77 +290,77 @@ export const galleryData = [
 
   // --- BATHTUBS -------------------------------------------------------
   {
-    id: "abyss-edition",
-    category: "Bathtubs",
-    title: "Abyss Edition",
-    description: "Glass bathtub — deep azure-toned transparent glass with fluid wave contours that catch and scatter ambient light.",
-    thumb: "/images/tubs/Abyss-Edition-Thumb.webp",
-    large: "/images/tubs/Abyss-Edition.webp",
-    alt: "Azure glass bathtub with fluid wave-like contours"
-  },
-  {
-    id: "azure-mirage",
-    category: "Bathtubs",
-    title: "Azure Mirage",
-    description: "Glass bathtub — crystal-clear transparent form with gentle sculpted ripples for a serene, floating-water effect.",
-    thumb: "/images/tubs/Azure-Mirage-Thumb.webp",
-    large: "/images/tubs/Azure-Mirage.webp",
-    alt: "Transparent glass bathtub with subtle sculpted ripples"
-  },
-  {
-    id: "celestine-wave",
-    category: "Bathtubs",
-    title: "Celestine Wave",
-    description: "Stained-glass bathtub — lush green tonalities with layered wave motifs that glow richly in natural light.",
-    thumb: "/images/tubs/Celestine-Wave-Thumb.webp",
-    large: "/images/tubs/Celestine-Wave.webp",
-    alt: "Lush green stained-glass bathtub with layered wave patterns"
-  },
-  {
-    id: "emerald-psalm",
-    category: "Bathtubs",
-    title: "Emerald Psalm",
-    description: "Glass bathtub — ice‑blue translucent glass with sculpted surfaces that create lyrical, water-like reflections.",
-    thumb: "/images/tubs/Emerald-Psalm-Thumb.webp",
-    large: "/images/tubs/Emerald-Psalm.webp",
-    alt: "Ice-blue glass bathtub with sculpted reflective surfaces"
-  },
-  {
-    id: "neptunes-veil",
-    category: "Bathtubs",
-    title: "Neptune's Veil",
-    description: "Glass bathtub — vibrant bright‑pink glass formed in fluid organic curves for a dramatic color-forward statement.",
-    thumb: "/images/tubs/Neptunes-Veil-Thumb.webp",
-    large: "/images/tubs/Neptunes-Veil.webp",
-    alt: "Bright pink glass bathtub with flowing organic contours"
-  },
-  {
-    id: "petalstone",
-    category: "Bathtubs",
-    title: "Petalstone",
-    description: "Glass bathtub — soft pink transparent glass embedded with delicate floral elements for an artistic botanical effect.",
-    thumb: "/images/tubs/Petalstone-Thumb.webp",
-    large: "/images/tubs/Petalstone.webp",
-    alt: "Soft pink glass bathtub with embedded floral elements"
-  },
-  {
-    id: "rose-seraphina",
-    category: "Bathtubs",
-    title: "Rose Seraphina",
-    description: "Glass bathtub — ice‑blue glass with carved wave impressions that create ethereal, luminous refractions.",
-    thumb: "/images/tubs/Rose-Seraphina-Thumb.webp",
-    large: "/images/tubs/Rose-Seraphina.webp",
-    alt: "Ice-blue glass bathtub with carved wave-like impressions"
-  },
-  {
-    id: "the-poseidon",
-    category: "Bathtubs",
-    title: "The Poseidon",
-    description: "Stained-glass bathtub — deep blue stained glass with sculptural water-inspired textures for a regal aquatic presence.",
-    thumb: "/images/tubs/The-Poseidon-Thumb.webp",
-    large: "/images/tubs/The-Poseidon.webp",
-    alt: "Blue stained-glass bathtub with sculptural water textures"
-  },
+   id: "abyss-edition",
+   category: "Bathtubs",
+   title: "Abyss Edition",
+   description: "Stained-glass bathtub — deep blue stained glass with sculptural water-inspired textures for a regal aquatic presence.", 
+   thumb: "/images/tubs/Abyss-Edition-Thumb.webp",
+   large: "/images/tubs/Abyss-Edition.webp",
+   alt: "Blue stained-glass bathtub with sculptural water textures"
+ },
+ {
+   id: "azure-mirage",
+   category: "Bathtubs",
+   title: "Azure Mirage",
+   description: "Glass bathtub — deep azure-toned transparent glass with fluid wave contours that catch and scatter ambient light.", 
+   thumb: "/images/tubs/Azure-Mirage-Thumb.webp",
+   large: "/images/tubs/Azure-Mirage.webp",
+   alt: "Azure glass bathtub with fluid wave-like contours"
+ },
+ {
+   id: "celestine-wave",
+   category: "Bathtubs",
+   title: "Celestine Wave",
+   description: "Glass bathtub — crystal-clear transparent form with gentle sculpted ripples for a serene, floating-water effect.",
+   thumb: "/images/tubs/Celestine-Wave-Thumb.webp",
+   large: "/images/tubs/Celestine-Wave.webp",
+   alt: "Transparent glass bathtub with subtle sculpted ripples"
+ },
+ {
+   id: "emerald-psalm",
+   category: "Bathtubs",
+   title: "Emerald Psalm",
+   description: "Stained-glass bathtub — lush green tonalities with layered wave motifs that glow richly in natural light.",
+   thumb: "/images/tubs/Emerald-Psalm-Thumb.webp",
+   large: "/images/tubs/Emerald-Psalm.webp",
+   alt: "Lush green stained-glass bathtub with layered wave patterns"
+ },
+ {
+   id: "neptunes-veil",
+   category: "Bathtubs",
+   title: "Neptune's Veil",
+   description: "Glass bathtub — ice‑blue translucent glass with sculpted surfaces that create lyrical, water-like reflections.",
+   thumb: "/images/tubs/Neptunes-Veil-Thumb.webp",
+   large: "/images/tubs/Neptunes-Veil.webp",
+   alt: "Ice-blue glass bathtub with sculpted reflective surfaces"
+ },
+ {
+   id: "petalstone",
+   category: "Bathtubs",
+   title: "Petalstone",
+   description: "Glass bathtub — vibrant bright‑pink glass formed in fluid organic curves for a dramatic color-forward statement.",
+   thumb: "/images/tubs/Petalstone-Thumb.webp",
+   large: "/images/tubs/Petalstone.webp",
+   alt: "Bright pink glass bathtub with flowing organic contours"
+ },
+ {
+   id: "rose-seraphina",
+   category: "Bathtubs",
+   title: "Rose Seraphina",
+   description: "Glass bathtub — soft pink transparent glass embedded with delicate floral elements for an artistic botanical effect.",
+   thumb: "/images/tubs/Rose-Seraphina-Thumb.webp",
+   large: "/images/tubs/Rose-Seraphina.webp",
+   alt: "Soft pink glass bathtub with embedded floral elements"
+ },
+ {
+   id: "the-poseidon",
+   category: "Bathtubs",
+   title: "The Poseidon",
+   description: "Glass bathtub — ice‑blue glass with carved wave impressions that create ethereal, luminous refractions.",
+   thumb: "/images/tubs/The-Poseidon-Thumb.webp",
+   large: "/images/tubs/The-Poseidon.webp",
+   alt: "Ice-blue glass bathtub with carved wave-like impressions"
+ },
 
  // --- SINKS -------------------------------------------------------
 
