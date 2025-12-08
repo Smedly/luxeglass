@@ -25,7 +25,21 @@ function Thumb({ img, onOpen }) {
 
 export default function Gallery({ initialCategory = 'All', initialCount = 9 }) {
   const items = tableGallery
-  const categories = ['All', ...Array.from(new Set(items.map(i => i.category)))]
+
+  // REMOVE "ALL"
+  //const categories = ['All', ...Array.from(new Set(items.map(i => i.category)))]
+
+  //new section
+  
+  const categories = Array.from(new Set(items.map(i => i.category)))
+
+  // If someone still passes initialCategory="All", switch to first category
+  const safeInitial = categories.includes(initialCategory)
+    ? initialCategory
+    : categories[0]  
+
+  // END new section
+  
   const [filter, setFilter] = useState(initialCategory)
   const [open, setOpen] = useState(null)
   const [count, setCount] = useState(initialCount)
@@ -46,6 +60,7 @@ export default function Gallery({ initialCategory = 'All', initialCount = 9 }) {
           </button>
         ))}
       </div>
+      {/* Gallery grid & lightbox remain unchanged... */}
 
       {/* Thumbnails */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
