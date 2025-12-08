@@ -131,7 +131,9 @@ export default function Gallery({ initialCategory = 'All', initialCount = 9 }) {
             {/* Close Button */}
             <button
               onClick={() => setOpen(null)}
-              className="absolute top-3 right-3 text-gray-600"
+              className="absolute top-3 right-3 text-gray-600
+              bg-white/80 backdrop-blur px-2 py-1 rounded-md
+              md:bg-transparent md:px-0 md:py-0"
             >
               Close
             </button>
