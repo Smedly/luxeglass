@@ -106,7 +106,7 @@ export default function Gallery({ initialCategory = 'All', initialCount = 9 }) {
                 <p className="mt-4 text-sm font-serif bold text-gray-800">{open.description}</p>
 
                 {/* Updated quotation instructions */}
-                <p className="mt-4 text-sm text-gray-700 whitespace-pre-line">
+                <p className="mt-4 text-sm text-gray-700 whitespace-pre-line hidden sm:block">
                   To receive an accurate quotation, please include as many project details as possible:
 
                   {"\n\n"}For designer resin tables: dimensions, scale, materials, intended environment, functional requirements, custom imagery, text, or embedded elements, LED or other electronics, control requirements, etc..
