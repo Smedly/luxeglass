@@ -155,9 +155,15 @@ export default function GlassProductsSite() {
           <div className="flex items-center justify-between flex-col md:flex-row gap-6 md:gap-0">
             <h2 className="text-2xl font-bold whitespace-nowrap">Selected Projects & Signature Pieces</h2>
             <div className="text-sm text-gray-600 max-w-xl md:text-right leading-relaxed">
+              <p className="mb-3 md:mb-0">
               Custom-crafted works in marble, glass, and hand-cast designer resin.<br/>
+              </p>
+              <p className="mb-3 md:mb-0">
               Advanced lighting and electronic integrations with seamless smartphone control.<br/>
+              </p>
+              <p> 
               Imagery, textures, embedded items tailored to any artistic requirement.
+              </p>
             </div>
           </div>
 
