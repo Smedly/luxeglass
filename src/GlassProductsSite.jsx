@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Gallery from './Gallery';
 
 export default function GlassProductsSite() {
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [selected, setSelected] = useState(null);
   const [statusMessage, setStatusMessage] = useState('');
   const [loading, setLoading] = useState(false);
@@ -68,6 +69,7 @@ export default function GlassProductsSite() {
       {/* Header */}
       <header className="bg-white shadow-sm sticky top-0 z-40">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+          {/* Logo + Text */}
           <div className="flex items-center gap-3">
             <img src="/images/logos/luxe-glass-logo.webp" alt="Luxe Glass Logo" className="h-10 w-auto" />
             <div>
@@ -76,6 +78,7 @@ export default function GlassProductsSite() {
             </div>
           </div>
 
+          {/* Desktop Nav */}
           <nav className="hidden md:flex gap-6 items-center text-sm">
             <a href="#products" className="hover:text-indigo-600">Products</a>
             <a href="#about" className="hover:text-indigo-600">About</a>
@@ -83,8 +86,27 @@ export default function GlassProductsSite() {
             <a href="#contact" className="px-3 py-2 bg-indigo-600 text-white rounded-md text-sm">Request Quote</a>
           </nav>
 
-          <button className="md:hidden px-3 py-2 border rounded-md text-sm">Menu</button>
+          {/* Mobile Menu Button */}
+          <button 
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="md:hidden px-3 py-2 border rounded-md text-sm">Menu</button>
         </div>
+        {/* Mobile Dropdown */}
+        {mobileOpen && (
+          <div className="md:hidden bg-white border-t shadow-sm">
+            <nav className="flex flex-col px-6 py-4 gap-4 text-sm">
+              <a href="#products" className="hover:text-indigo-600">Products</a>
+              <a href="#about" className="hover:text-indigo-600">About</a>
+              <a href="#contact" className="hover:text-indigo-600">Contact</a>
+              <a
+                href="#contact"
+                className="px-3 py-2 bg-indigo-600 text-white rounded-md text-sm"
+              >
+                Request Quote
+              </a>
+            </nav>
+          </div>
+        )}
       </header>
 
       {/* Hero */}
